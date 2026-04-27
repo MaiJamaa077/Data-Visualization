@@ -12,8 +12,17 @@ To strictly adhere to the Bauhaus "Form Follows Function" philosophy and the ass
    - **Mechanism:** Clicking a cell in the **Heatmap** facets the **Scatter Plot** to show only the athletes corresponding to that specific Team and Sport.
    - **Justification:** This coordination fulfills the "Faceting" requirement by allowing one view to act as a navigational lens for the other, facilitating deep-dive discovery into specific sport-team dominance.
 
-3. **Manipulation (Reset Mark):**
-   - **Mechanism:** A dedicated **RESET ALL** SVG group (rect + text) allows the user to manipulate the global state and return to the high-level overview without relying on external UI elements.
+3. **Mental Map Stability (Gradual Transitions):**
+   - **Mechanism:** All interactions (filtering, faceting, resizing) trigger smooth **D3 Transitions (750ms)**.
+   - **Justification:** Following the instructor's advice, we avoided instantaneous "jumping" between states. Gradual transitions help the viewer maintain their "mental map" of the data, allowing them to follow individual dots as they appear, disappear, or move during a filter action.
+
+---
+
+## Analytical Rigor & Normalization
+
+To ensure a fair comparison across different types of Olympic sports, we implemented a robust measurement of success:
+
+- **Medal Normalization:** Team sports (e.g., Ice Hockey) naturally generate many rows in the raw dataset for a single victory. To prevent these from skewing the "Dominance" heatmap, our counting logic groups medals by **Event and Year**. This ensures that one Team Gold in Hockey carries the same weight as one Individual Gold in Skiing, providing a much more accurate view of sport popularity and dominance.
 
 ---
 
@@ -23,7 +32,7 @@ Following the **Royal Statistical Society (RSS)** best practices for visualizati
 
 - **Qualitative Palette Selection:** We replaced the stereotypical red/blue binary with a high-contrast **Purple (#e1bee7/8e44ad)** and **Orange (#ffe0b2/f39c12)** qualitative palette. This decision avoids gender bias and ensures the dashboard is accessible to users with color vision deficiencies (Color-Blind Safe).
 - **Double Encoding:** Success is encoded using both color and radius (medals are larger than non-medals), ensuring the "What" is identifiable even without color perception.
-- **Typography for Legibility:** All text labels adhere to a minimum size of **14px (approx. 10.5pt)** to ensure readability. Axis titles are bolded and set to **1.5rem** for clear information hierarchy.
+- **Typography for Legibility:** All text labels adhere to a minimum size of **14px (approx. 10.5pt)** with titles at **24px (18pt)**, ensuring the report is readable for users with visual impairments.
 
 ---
 
