@@ -1,0 +1,13 @@
+# Ignore large binaries and archives
+*.pdf
+*.zip
+*.rar
+*.tar.gz
+
+# Ignore node_modules
+node_modules/
+*/node_modules/
+
+# Ignore Python cache
+__pycache__/
+*.pyc

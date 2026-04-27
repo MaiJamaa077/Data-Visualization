@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="banner">
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <title>Visualization Exercise</title>
+</head>
+
+<body class="content">
+<main>
+    <div id="dashboard">
+        <div id="heatmap-container" class="viz-panel">
+            <h3>Sport Dominance by Team (Heatmap)</h3>
+            <svg id="heatmap"></svg>
+        </div>
+        <div id="scatter-container" class="viz-panel">
+            <h3>Physical Attributes vs. Success (Scatter Plot)</h3>
+            <svg id="scatter-plot"></svg>
+        </div>
+    </div>
+    
+    <section id="documentation">
+        <h2>Design Cycle Documentation</h2>
+        
+        <h3>Task 1: What (Data Analysis)</h3>
+        <zero-md src="what.md">
+            <template><link rel="stylesheet" href="./style.css"/></template>
+        </zero-md>
+
+        <h3>Task 2: Why (Goal Definition)</h3>
+        <zero-md src="why.md">
+            <template><link rel="stylesheet" href="./style.css"/></template>
+        </zero-md>
+
+        <h3>Task 3: How (Design Choices)</h3>
+        <zero-md src="design_choices.md">
+            <template><link rel="stylesheet" href="./style.css"/></template>
+        </zero-md>
+    </section>
+
+</main>
+</body>
+
+
+</html>
